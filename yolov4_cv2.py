@@ -21,7 +21,7 @@ model.setInputParams(size=(416, 416), scale=1/255, swapRB=True)
 while cv2.waitKey(1) < 1:
     (grabbed, frame) = vc.read()
     if not grabbed:
-        exit()
+        break
 
     start = time.time()
     classes, scores, boxes = model.detect(frame, CONFIDENCE_THRESHOLD, NMS_THRESHOLD)
